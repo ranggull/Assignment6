@@ -6,16 +6,16 @@ public class PaidAdvisor extends Person {
 	public PaidAdvisor(String first, String last) {
 		super(first, last);
 
-	int hoursWorked = 0;
-	private Person[] staffList; 
-	staffList = new PaidAdvisor[3];
-	staffList[0] = new PaidAdvisor("Sterling", "Archer", hoursWorked);
-	staffList[1] = new PaidAdvisor("Lana", "Kane", hoursWorked);
-	staffList[2] = new PaidAdvisor("Cyril", "Figgis", hoursWorked);
 	}
 	
+	public PaidAdvisor(String first, String last, int hoursWorked) {
+		super(first, last); 
+
+	}
+
 	private payroll() {
 		
+		int hoursWorked = 0;
 		int regularPayRate = 25;
 		int specialPayRate = 50;
 		int overtimePayRate = (int) (regularPayRate * 1.5);
