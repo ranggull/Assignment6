@@ -3,6 +3,11 @@ import java.util.Scanner;
 
 public class PaidAdvisor extends Person {
 
+	private int hoursWorked = 0;
+	private int regularPayRate = 25;
+	private int specialPayRate = 50;
+	private int overtimePayRate = (int) (regularPayRate * 1.5);
+	
 	public PaidAdvisor(String first, String last) {
 		super(first, last);
 
@@ -15,10 +20,6 @@ public class PaidAdvisor extends Person {
 
 	private payroll() {
 		
-		int hoursWorked = 0;
-		int regularPayRate = 25;
-		int specialPayRate = 50;
-		int overtimePayRate = (int) (regularPayRate * 1.5);
 		Scanner scan = new Scanner(System.in);
 		
 		for(int i=0; i<staffList.length; i++) {
