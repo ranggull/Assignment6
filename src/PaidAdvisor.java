@@ -10,10 +10,7 @@ public class PaidAdvisor extends Person {
 	
 	public PaidAdvisor(String first, String last) {
 		super(first, last);
-		int hoursWorked = 0;
-		int regularPayRate = 0;
-		int specialPayRate = 0;
-		int overtimePayRate = 0;
+		hoursWorked = 0; regularPayRate = 0, specialPayRate = 0, overtimePayRate = 0;
 
 	}
 	
