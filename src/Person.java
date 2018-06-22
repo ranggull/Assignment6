@@ -3,7 +3,7 @@ public class Person {
 
 	private String firstName;  // store the first name
 	private String lastName;   // store the last name
-	public person() {          // default constructor
+	public Person() {          // default constructor
 		
 		firstName = "";
 		lastName = "";
@@ -25,4 +25,5 @@ public class Person {
 	public String getLastName() {
 		return lastName;
 	}
+	
 }

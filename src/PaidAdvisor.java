@@ -3,59 +3,58 @@ import java.util.Scanner;
 
 public class PaidAdvisor extends Person {
 
-	private int hoursWorked = 0;
-	private int regularPayRate = 25;
-	private int specialPayRate = 50;
-	private int overtimePayRate = (int) (regularPayRate * 1.5);
+	private int hoursWorked;
+	private int regularPayRate;
+	private int specialPayRate;
+	private double overtimePayRate;
 	
 	public PaidAdvisor(String first, String last) {
 		super(first, last);
-		hoursWorked = 0; regularPayRate = 0, specialPayRate = 0, overtimePayRate = 0;
+		hoursWorked = 0; 
+		regularPayRate = 25; 
+		specialPayRate = 50; 
+		overtimePayRate = regularPayRate * 1.5;
 
 	}
 	
 	public PaidAdvisor(String first, String last, int hoursWorked) {
 		super(first, last); 
+		this.hoursWorked = hoursWorked;
 
 	}
+	
+	public int getPayRate() {
+		return regularPayRate;
+	}
 
-	private payroll() {
+	public String toString(int hours) {
+		return "" + calculatePay(hours);
+	}
+	
+	public void setHours(int hours) {
+		hoursWorked = hours;
+	}
+	
+	private double calculatePay(int hours) {
 		
-		Scanner scan = new Scanner(System.in);
+		double payCheck = 0;
+		int regularHours = 0;
+		int overtimeHours = 0;
+		int specialHours = hours;
 		
-		for(int i=0; i<staffList.length; i++) {
-			
-		System.out.println("Enter hours worked for " + staffList[i]);
-		hoursWorked[i] = (scan.nextInt());
+		hoursWorked = hoursWorked - specialHours;
 		
-		double payRate = 0;
-		double remainder = 0;
-		
-		if(hoursWorked <= 30) {
-			payRate = hoursWorked * regularPayRate;
+		if(hoursWorked > 30) {
+			regularHours = 30;
+			overtimeHours = hoursWorked - 30;
 		}
-		else if(hoursWorked > 30) {
-			remainder = hoursWorked - 30;
-			remainder = remainder * overtimePayRate;
-			payRate = 750 + remainder;
-		}
 		
-		String decision = "";
-		int special = 0;
-		
-		System.out.println("Did " + staffList[i] + " work for a special session? (y/n)");
-		decision = (scan.nextLine());
-		if (decision.equalsIgnoreCase("n")) {
-			special = 0;
-		}
 		else {
-			System.out.println("How many special hours did " + staffList[i] + " work?");
-			special = (scan.nextInt());
-			payRate = (payRate + (special * specialPayRate);
+			regularHours = hoursWorked;
 		}
-			
-		return payRate;
 		
-		}
+		payCheck = ((specialHours * specialPayRate) + (regularHours * regularPayRate) + (overtimeHours * (overtimePayRate)));
+		
+		return payCheck;
 	}
 }
