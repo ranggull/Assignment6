@@ -51,7 +51,7 @@ public class PaidAdvisor extends Person {
 			regularHours = hoursWorked;
 		}
 		
-		payCheck = ((specialHours * specialPayRate) + (regularHours * regularPayRate) + (overtimeHours * (overtimePayRate)));
+		payCheck = ((specialHours * specialPayRate) + (regularHours * regularPayRate) + (overtimeHours * overtimePayRate));
 		
 		return payCheck;
 	}
