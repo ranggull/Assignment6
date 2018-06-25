@@ -17,7 +17,7 @@ public class Main {
 		System.out.println("How many of those hours were special hours?");
 		int specialHours = 0;
 		specialHours = scan.nextInt();
-		System.out.println(p.getFirstName() + p.getLastName() + " earned " + p.toString(payCheck) + " dollars.");
+		System.out.println(p.getFirstName() + p.getLastName() + " earned " + p.toString() + " dollars.");
 		
 		
 	}

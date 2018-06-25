@@ -1,6 +1,4 @@
 
-import java.util.Scanner;
-
 public class PaidAdvisor extends Person {
 
 	private int hoursWorked;
